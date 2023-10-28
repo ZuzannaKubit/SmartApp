@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SmartApp</string>
+    <string name="nie_masz_konta">Nie masz konta?</string>
+    <string name="zarejestruj_sie">Rejestracja</string>
+</resources>
