@@ -1,4 +1,4 @@
-package com.zuzob00l.smartapp.screens
+package com.zuzob00l.smartapp.screens.loginScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -48,14 +49,6 @@ fun LoginScreen()
 fun LoginScreenContent(
     onLoginClicked: (String, String) -> Unit,
 ) {
-    val loginBackgroundImage = ImageBitmap.imageResource(R.drawable.ic_background)
-
-    Image(
-        modifier = Modifier.backgroundImageModifier(),
-        bitmap = loginBackgroundImage,
-        contentScale = ContentScale.Crop,
-        alpha = 0.5f,
-        contentDescription = "login background")
 
     Column(modifier = Modifier
         .fillMaxWidth()
@@ -63,6 +56,13 @@ fun LoginScreenContent(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center)
     {
+        Image(
+            modifier = Modifier
+                .padding(bottom = 30.dp)
+                .size(100.dp),
+            painter = painterResource(R.drawable.ic_logo),
+            contentDescription = "logo image")
+
         Text(
             text = stringResource(R.string.nie_masz_konta),
             fontSize = 18.sp,

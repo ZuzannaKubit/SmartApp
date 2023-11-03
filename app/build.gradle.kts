@@ -34,11 +34,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -54,6 +54,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-auth:22.2.0")
     val room_version = "2.5.2"
     val coil_version = "1.1.0"
     val nav_version = "2.6.0"

@@ -2,4 +2,7 @@
     <string name="app_name">SmartApp</string>
     <string name="nie_masz_konta">Nie masz konta?</string>
     <string name="zarejestruj_sie">Rejestracja</string>
+    //start screen:
+    <string name="Zaloguj_się">Zaloguj się</string>
+    <string name="Zarejestruj_się">Zarejestruj się</string>
 </resources>
