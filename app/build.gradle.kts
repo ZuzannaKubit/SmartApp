@@ -54,10 +54,13 @@ android {
 }
 
 dependencies {
-    implementation("com.google.firebase:firebase-auth:22.2.0")
+
+    implementation("com.google.firebase:firebase-firestore:24.9.1")
     val room_version = "2.5.2"
     val coil_version = "1.1.0"
     val nav_version = "2.6.0"
+
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
 
     //material:
     implementation("androidx.compose.material:material-android:1.5.4")
@@ -65,15 +68,18 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core-android:1.5.4")
     //Firebase dependencies
     implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
-
+    implementation("com.google.firebase:firebase-storage")
     implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-firestore-ktx")
+
     //Hilt:
     implementation ("androidx.hilt:hilt-navigation-fragment:1.0.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0-rc01")
     implementation ("androidx.hilt:hilt-work:1.0.0")
     implementation ("com.google.dagger:hilt-android:2.44")
-    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+
+    //coil:
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
     kapt("com.google.dagger:hilt-android-compiler:2.44")
     //room:
     implementation("androidx.room:room-runtime:$room_version")
