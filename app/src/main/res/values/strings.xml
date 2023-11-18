@@ -5,4 +5,30 @@
     //start screen:
     <string name="Zaloguj_się">Zaloguj się</string>
     <string name="Zarejestruj_się">Zarejestruj się</string>
+
+    //signInScreen:
+    <string name="Nieprawidłowy_Email_lub_Hasło">Nieprawidłowy Email lub Hasło</string>
+
+    //Home screen:
+    <string name="moje_konto">Moje Konto</string>
+    <string name="karnety">Karnety</string>
+
+    //HomeButtons:
+    <string name="_moje_konto">"Moje Konto"</string>
+    <string name="platnosci">"Płatności"</string>
+    <string name="aktywnosci">Aktywności</string>
+
+    <string name="activity_icon">activity icon</string>
+    <string name="peyment_icon">peyment_icon</string>
+    <string name="account_icon">account_icon</string>
+    <string name="pass_icon">"pass icon"</string>
+
+    //UserDataScreen:
+    <string name="edytuj">Edytuj</string>
+    <string name="edit_icon">edit_icon</string>
+    //Text Fields:
+    <string name="imie">Imię</string>
+    <string name="nazwisko">Nazwisko</string>
+    <string name="haslo">hasło</string>
+    <string name="powtorz_haslo">powtórz hasło</string>
 </resources>
