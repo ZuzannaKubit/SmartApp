@@ -1,20 +1,13 @@
 package com.zuzob00l.smartapp.navigation
 
-enum class SmartAppScreens() {
-    StartScreen,
-    LoginScreen,
-    HomeScreen,
-    RegisterScreen;
+const val ROOT_GRAPH_ROUTE = "root"
+const val AUTH_GRAPH_ROUTE = "auth"
+const val HOME_GRAPH_ROUTE = "home"
 
-    companion object {
-        fun fromRoute(route: String?): SmartAppScreens = when (route?.substringBefore("/")) {
-            StartScreen.name -> StartScreen
-            LoginScreen.name -> LoginScreen
-            RegisterScreen.name -> RegisterScreen
-            HomeScreen.name -> HomeScreen
-            null -> HomeScreen
-            else -> throw IllegalArgumentException("route $route is not recognized")
-        }
-    }
+sealed class Screen(val route: String) {
+    object Home: Screen(route = "HomeScreen")
+    object Login: Screen(route = "SignInScreen")
+    object SignUp: Screen(route = "SignUpScreen")
+    object Start: Screen(route = "StartScreen")
 }
  
