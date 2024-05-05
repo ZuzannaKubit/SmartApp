@@ -28,7 +28,6 @@ import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -38,14 +37,15 @@ import com.zuzob00l.smartapp.components.LanguageDropDown
 import com.zuzob00l.smartapp.model.Language
 import com.zuzob00l.smartapp.modifiers.backgroundImageModifier
 import com.zuzob00l.smartapp.modifiers.startButtonModifier
-import com.zuzob00l.smartapp.navigation.SmartAppScreens
 import com.zuzob00l.smartapp.screens.loginScreen.SignUpViewModel
 import kotlinx.coroutines.launch
 
 @Composable
 fun StartScreen(
     navController: NavController,
-    signUpViewModel: SignUpViewModel = hiltViewModel())
+    signUpViewModel: SignUpViewModel = hiltViewModel(),
+    onLoginClicked: () -> Unit,
+    onRegisterClicked: () -> Unit)
 {
     val loginBackgroundImage = ImageBitmap.imageResource(R.drawable.ic_background)
 
@@ -59,8 +59,8 @@ fun StartScreen(
         contentDescription = "login background")
 
         StartScreenContent(
-            onLoginClicked = { navController.navigate(SmartAppScreens.LoginScreen.name) },
-            onSignInClicked = { navController.navigate(SmartAppScreens.RegisterScreen.name) })
+            onLoginClicked = { onLoginClicked() },
+            onSignInClicked = { onRegisterClicked() })
 }
 @Composable
 fun StartScreenContent(

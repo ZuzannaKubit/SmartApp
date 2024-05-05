@@ -24,7 +24,7 @@ class SignUpViewModel @Inject constructor(
     private var _userData = Channel<SignInState>()
 
     fun registerUser(email: String, password: String, name: String, surname: String)
-            =viewModelScope.launch {
+            = viewModelScope.launch {
         repository.registerUser(email, password, name, surname).collect{ result ->
             when(result){
                 is Resource.Success -> {

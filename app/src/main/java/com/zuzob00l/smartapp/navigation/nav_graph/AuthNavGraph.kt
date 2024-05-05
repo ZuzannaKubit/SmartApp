@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.zuzob00l.smartapp.navigation.AUTH_GRAPH_ROUTE
+import com.zuzob00l.smartapp.navigation.HOME_GRAPH_ROUTE
 import com.zuzob00l.smartapp.navigation.Screen
 import com.zuzob00l.smartapp.screens.StartScreen.StartScreen
 import com.zuzob00l.smartapp.screens.loginScreen.LoginScreen
@@ -23,12 +24,23 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController)
                 onRegisterClicked = { navController.navigate(Screen.SignUp.route) })
         }
         composable(route = Screen.Login.route){
-            LoginScreen(navController = navController)
+            LoginScreen(
+                navController = navController,
+                onRegisterClicked = { navController.navigate(Screen.SignUp.route) },
+                onLoginClicked = {
+                    navController.navigate(HOME_GRAPH_ROUTE){
+                        popUpTo(AUTH_GRAPH_ROUTE)
+                    } })
         }
         composable(route = Screen.SignUp.route){
-            RegisterScreen(navController = navController) {
-                
-            }
+            RegisterScreen(
+                navController = navController,
+                popUpScreen = {
+                    navController.navigate(HOME_GRAPH_ROUTE) {
+                        popUpTo(AUTH_GRAPH_ROUTE)
+                    }
+                })
+
         }
     }
 }

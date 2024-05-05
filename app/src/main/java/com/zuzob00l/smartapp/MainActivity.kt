@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.zuzob00l.smartapp.navigation.nav_graph.SetupNavGraph
+import com.zuzob00l.smartapp.screens.home.Test
 import com.zuzob00l.smartapp.screens.loginScreen.SignInViewModel
 import com.zuzob00l.smartapp.ui.theme.SmartAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +23,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
      private lateinit var navController: NavHostController
-     private val SignInViewModel: SignInViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +47,7 @@ class MainActivity : ComponentActivity() {
              horizontalAlignment = Alignment.CenterHorizontally)
          {
              SetupNavGraph(navController = navController)
+            // Test()
          }
      }
  }
